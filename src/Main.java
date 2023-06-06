@@ -1,6 +1,21 @@
 public class Main {
     public static void main(String[] args) {
 
+        Hogwarts[] students = {
+                new GryffindorFaculty("Гарри", "Поттер", 12, 14, 15, 10, 11),
+                new GryffindorFaculty("Гермиона", "Грейнджер", 15, 11, 18, 7, 14),
+                new GryffindorFaculty("Рон", "Уизли", 10, 11, 17, 12, 10),
+                new HufflepuffFaculty("Захария", "Смит", 11, 13, 16, 13, 12),
+                new HufflepuffFaculty("Седрик", "Диггори", 14, 12, 16, 9, 13),
+                new HufflepuffFaculty("Джастин", "Финч-Флетчли", 11, 12, 15, 12, 14),
+                new RavenclawFaculty("Чжоу", "Чанг", 12, 14, 15, 10, 11, 14),
+                new RavenclawFaculty("Падма", "Патил", 15, 11, 18, 7, 14, 13),
+                new RavenclawFaculty("Маркус", "Белби", 10, 11, 17, 12, 10,12),
+                new SlytherinFaculty("Драко", "Малфой", 12, 14, 15, 10, 11, 14,11),
+                new SlytherinFaculty("Грэхэм", "Монтегю", 15, 11, 18, 7, 14, 13,15),
+                new SlytherinFaculty("Грегори", "Гойл", 10, 11, 17, 12, 10,12,13)
+        };
+
         GryffindorFaculty[] studentsGryffindor = {
                 new GryffindorFaculty("Гарри", "Поттер", 12, 14, 15, 10, 11),
                 new GryffindorFaculty("Гермиона", "Грейнджер", 15, 11, 18, 7, 14),
@@ -26,9 +41,22 @@ public class Main {
         };
 
         PrintService printService = new PrintService();
+        // Вывод в консоль учеников Гриффиндора
         printService.print(studentsGryffindor);
+        // Вывод в консоль сравнения учеников Гриффиндора(для остальных факультетов аналогично)
+        printService.compareGryffindorStudents(studentsGryffindor);
+
         printService.print(studentsHufflepuff);
+        printService.compareHufflepuffStudents(studentsHufflepuff);
+
         printService.print(studentsRavenclaw);
+        printService.compareRavenclawStudents(studentsRavenclaw);
+
         printService.print(studentsSlytherin);
+        printService.compareSlytherinStudents(studentsSlytherin);
+
+        //Вывод в консоль сравнения учеников Хогвартса
+        printService.compareHogwartsStudents(students);
+
     }
 }
