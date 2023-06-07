@@ -36,4 +36,26 @@ public class GryffindorFaculty extends Hogwarts {
     public void setBravery(int bravery) {
         this.bravery = bravery;
     }
+
+    // Метод, который выводит на экран описание студентов Гриффиндора
+    public static void print(GryffindorFaculty student) {
+        System.out.println("Студент: " +student.getName()+ " " +student.getSurname() +
+                " колдовство - " +student.getLevelWitchcraft()+ "; трансгрессия - "
+                + student.getLevelTransgress()+ "; благородство - " +student.getNobility() +
+                "; честь - " +student.getHonor()+ "; храбрость - " +student.getBravery() + "." );
+    }
+
+    // Метод сравнения учеников Гриффиндора
+    public void compareGryffindor(GryffindorFaculty student2) {
+        int totalPoints1 = this.getHonor() + this.getBravery();
+        int totalPoints2 = student2.getHonor() + student2.getBravery();
+
+        if (totalPoints1 > totalPoints2) {
+            System.out.println(this.getName() + " " + this.getSurname() + " является лучшим учеником.");
+        } else if (totalPoints1 < totalPoints2) {
+            System.out.println(student2.getName() + " " + student2.getSurname() + " является лучшим учеником.");
+        } else {
+            System.out.println("У обоих учеников одинаковое количество баллов.");
+        }
+    }
 }
